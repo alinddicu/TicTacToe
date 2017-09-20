@@ -1,6 +1,8 @@
 ﻿namespace TicTacToe
 {
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
 	public class WinCase
 	{
@@ -28,5 +30,10 @@
 			       _positions.Contains(winCase._positions[1]) &&
 			       _positions.Contains(winCase._positions[2]);
 		}
+
+        public bool Contains(params Position[] positions)
+        {
+            throw new NotImplementedException();
+        }
 	}
 }

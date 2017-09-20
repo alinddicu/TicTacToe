@@ -16,5 +16,13 @@
 			_ownedPositions.Add(position);
 			return true;
 		}
-	}
+
+        public IEnumerable<Position> OwnedPositions
+        {
+            get
+            {
+                return _ownedPositions;
+            }
+        }
+    }
 }
