@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe
 {
-	using System;
+	using System.Linq;
 	using System.Collections.Generic;
 
 	public class VictoryPossibilities
@@ -26,7 +26,8 @@
 
 		public bool IsWinning(Player player)
 		{
-			throw new NotImplementedException();
+            var playerOwnedPositions = player.OwnedPositions.ToArray();
+            return _winCases.Any(w => w.ContainsPlayerPositions(player));
 		}
 	}
 }

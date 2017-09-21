@@ -1,6 +1,5 @@
 ﻿namespace TicTacToe
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -13,27 +12,12 @@
 			_positions.AddRange(new[] { pos1, pos2, pos3 });
 		}
 
-		public override bool Equals(object obj)
-		{
-			if (obj == null)
-			{
-				return false;
-			}
-
-			if (typeof(WinCase) != obj.GetType())
-			{
-				return false;
-			}
-
-			var winCase = (WinCase) obj;
-			return _positions.Contains(winCase._positions[0]) &&
-			       _positions.Contains(winCase._positions[1]) &&
-			       _positions.Contains(winCase._positions[2]);
-		}
-
-        public bool Contains(params Position[] positions)
+        public bool ContainsPlayerPositions(Player player)
         {
-            throw new NotImplementedException();
+            var playerOwnedPositions = player.OwnedPositions.ToArray();
+            return playerOwnedPositions.Contains(_positions[0])
+                && playerOwnedPositions.Contains(_positions[1])
+                && playerOwnedPositions.Contains(_positions[2]);
         }
 	}
 }
