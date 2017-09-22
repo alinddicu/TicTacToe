@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3BA3AEDC-D6CB-41C7-B13D-9FD83D73DFE3}</ProjectGuid>
+    <ProjectGuid>{3FD280F8-905E-46D4-AE1A-27C8174C0574}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TicTacToe.Test</RootNamespace>
-    <AssemblyName>TicTacToe.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>TicTacToe.Console.Test</RootNamespace>
+    <AssemblyName>TicTacToe.Console.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,7 +16,6 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,12 +54,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="WinCaseTest.cs" />
-    <Compile Include="PlayerTest.cs" />
-    <Compile Include="PositionTest.cs" />
+    <Compile Include="GridTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TicTacToe.Console\TicTacToe.Console.csproj">
+      <Project>{cf59fec0-30ed-499d-adbf-1b17f200d57f}</Project>
+      <Name>TicTacToe.Console</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TicTacToe\TicTacToe.csproj">
       <Project>{28381766-20d0-4416-be77-9b92a69569f8}</Project>
       <Name>TicTacToe</Name>

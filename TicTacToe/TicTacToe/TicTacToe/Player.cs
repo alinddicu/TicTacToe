@@ -5,6 +5,12 @@
 	public class Player
 	{
 		private readonly List<Position> _ownedPositions = new List<Position>();
+		private string _name;
+
+		public Player(string name)
+		{
+			_name = name;
+		}
 
 		public bool AddPosition(Position position, Player playerB)
 		{
@@ -17,12 +23,11 @@
 			return true;
 		}
 
-        public IEnumerable<Position> OwnedPositions
-        {
-            get
-            {
-                return _ownedPositions;
-            }
-        }
-    }
+        public IEnumerable<Position> OwnedPositions => _ownedPositions;
+
+		public override string ToString()
+		{
+			return _name;
+		}
+	}
 }

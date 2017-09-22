@@ -15,7 +15,7 @@
             Assert.AreNotEqual(new Position(0, 0), new Position(0, 1));
             Assert.AreNotEqual(null, new Position(0, 0));
             Assert.AreNotEqual(new Position(1, 0), null);
-            Assert.AreNotEqual(new Position(1, 0), new Player());
+            Assert.AreNotEqual(new Position(1, 0), new Player("a"));
         }
     }
 }

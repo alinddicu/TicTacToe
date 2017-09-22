@@ -9,8 +9,8 @@
         [TestMethod]
         public void CheckPlayerOwnedPositions()
         {
-            var playerA = new Player();
-            var playerB = new Player();
+            var playerA = new Player("a");
+            var playerB = new Player("b");
             Assert.IsTrue(playerA.AddPosition(new Position(0, 0), playerB));
             Assert.IsTrue(playerA.AddPosition(new Position(0, 1), playerB));
             CheckPlayerAPositions(playerA);
