@@ -1,6 +1,5 @@
-﻿namespace TicTacToe.Console
+﻿namespace TicTacToe
 {
-	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
 

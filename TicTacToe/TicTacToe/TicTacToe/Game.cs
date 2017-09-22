@@ -1,4 +1,4 @@
-﻿namespace TicTacToe.Console
+﻿namespace TicTacToe
 {
 	public class Game
 	{
