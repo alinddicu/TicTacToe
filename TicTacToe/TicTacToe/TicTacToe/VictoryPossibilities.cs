@@ -15,9 +15,9 @@
 			_winCases.Add(new WinCase(GetVertical3().ToArray()));
 
 			// horizontal
-			_winCases.Add(new WinCase(new Position(0, 0), new Position(1, 0), new Position(2, 0)));
-			_winCases.Add(new WinCase(new Position(0, 1), new Position(1, 1), new Position(2, 1)));
-			_winCases.Add(new WinCase(new Position(0, 2), new Position(1, 2), new Position(2, 2)));
+			_winCases.Add(new WinCase(GetHorizontal1().ToArray()));
+			_winCases.Add(new WinCase(GetHorizontal2().ToArray()));
+			_winCases.Add(new WinCase(GetHorizontal3().ToArray()));
 
 			//diagonals
 			_winCases.Add(new WinCase(new Position(0, 0), new Position(1, 1), new Position(2, 2)));
@@ -34,6 +34,34 @@
 			yield return GetVertical1();
 			yield return GetVertical2();
 			yield return GetVertical3();
+		}
+
+		public static IEnumerable<IEnumerable<Position>> GetHorizontals()
+		{
+			yield return GetHorizontal1();
+			yield return GetHorizontal2();
+			yield return GetHorizontal3();
+		}
+
+		private static IEnumerable<Position> GetHorizontal1()
+		{
+			yield return new Position(0, 0);
+			yield return new Position(1, 0);
+			yield return new Position(2, 0);
+		}
+
+		private static IEnumerable<Position> GetHorizontal2()
+		{
+			yield return new Position(0, 1);
+			yield return new Position(1, 1);
+			yield return new Position(2, 1);
+		}
+
+		private static IEnumerable<Position> GetHorizontal3()
+		{
+			yield return new Position(0, 2);
+			yield return new Position(1, 2);
+			yield return new Position(2, 2);
 		}
 
 		private static IEnumerable<Position> GetVertical1()

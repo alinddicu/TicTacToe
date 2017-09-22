@@ -4,11 +4,10 @@
 
 	public class Program
 	{
-		public static void Main(string[] args)
+		public static void Main()
 		{
 			var game = new Game();
-			Console.WriteLine(game.Grid);
-			Console.ReadLine();
+			game.Run(Console.ReadLine, Console.WriteLine);
 		}
 	}
 }

@@ -29,5 +29,21 @@
 		{
 			return _name;
 		}
+
+		public override bool Equals(object obj)
+		{
+			if (obj == null || obj.GetType() != GetType())
+			{
+				return false;
+			}
+
+			var other = (Player)obj;
+			return _name == other._name;
+		}
+
+		public override int GetHashCode()
+		{
+			return _name.GetHashCode();
+		}
 	}
 }

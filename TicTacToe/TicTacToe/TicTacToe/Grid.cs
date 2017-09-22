@@ -20,9 +20,9 @@
 			var playerBOwnedPositions = _playerB.OwnedPositions.ToArray();
 
 			var stringBuilder = new StringBuilder();
-			foreach (var vertical in VictoryPossibilities.GetVerticals())
+			foreach (var horizontal in VictoryPossibilities.GetHorizontals())
 			{
-				foreach (var gridPosition in vertical)
+				foreach (var gridPosition in horizontal)
 				{
 					if (playerAOwnedPositions.Contains(gridPosition))
 					{

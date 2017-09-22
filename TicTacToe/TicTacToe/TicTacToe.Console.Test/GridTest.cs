@@ -53,9 +53,9 @@
 			var grid = new Grid(playerA, playerB);
 
 			var expectedValue =
-				"AAA|" + Environment.NewLine +
-				"BBB|" + Environment.NewLine +
-				"AAA|" + Environment.NewLine;
+				"ABA|" + Environment.NewLine +
+				"ABA|" + Environment.NewLine +
+				"ABA|" + Environment.NewLine;
 			Check.That(grid.ToString()).Equals(expectedValue);
 		}
 	}

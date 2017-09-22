@@ -11,7 +11,12 @@
             _y = y;
         }
 
-        public override bool Equals(object obj)
+	    public override string ToString()
+	    {
+		    return $"{_x},{_y}";
+	    }
+
+	    public override bool Equals(object obj)
         {
             if (obj == null || obj.GetType() != GetType())
             {
@@ -26,5 +31,11 @@
         {
             return _x.GetHashCode() * _y.GetHashCode();
         }
+
+	    public static Position Parse(string input)
+	    {
+		    var splits = input.Split(',');
+		    return new Position(int.Parse(splits[0].Trim()), int.Parse(splits[1].Trim()));
+	    }
     }
 }
