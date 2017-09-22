@@ -10,9 +10,9 @@
 		public VictoryPossibilities()
 		{
 			// vertical
-			_winCases.Add(new WinCase(new Position(0, 0), new Position(0, 1), new Position(0, 2)));
-			_winCases.Add(new WinCase(new Position(1, 0), new Position(1, 1), new Position(1, 2)));
-			_winCases.Add(new WinCase(new Position(2, 0), new Position(2, 1), new Position(2, 2)));
+			_winCases.Add(new WinCase(GetVertical1().ToArray()));
+			_winCases.Add(new WinCase(GetVertical2().ToArray()));
+			_winCases.Add(new WinCase(GetVertical3().ToArray()));
 
 			// horizontal
 			_winCases.Add(new WinCase(new Position(0, 0), new Position(1, 0), new Position(2, 0)));
@@ -26,8 +26,35 @@
 
 		public bool IsWinning(Player player)
 		{
-            var playerOwnedPositions = player.OwnedPositions.ToArray();
             return _winCases.Any(w => w.ContainsPlayerPositions(player));
+		}
+
+		public static IEnumerable<IEnumerable<Position>> GetVerticals()
+		{
+			yield return GetVertical1();
+			yield return GetVertical2();
+			yield return GetVertical3();
+		}
+
+		private static IEnumerable<Position> GetVertical1()
+		{
+			yield return new Position(0, 0);
+			yield return new Position(0, 1);
+			yield return new Position(0, 2);
+		}
+
+		private static IEnumerable<Position> GetVertical2()
+		{
+			yield return new Position(1, 0);
+			yield return new Position(1, 1);
+			yield return new Position(1, 2);
+		}
+
+		private static IEnumerable<Position> GetVertical3()
+		{
+			yield return new Position(2, 0);
+			yield return new Position(2, 1);
+			yield return new Position(2, 2);
 		}
 	}
 }

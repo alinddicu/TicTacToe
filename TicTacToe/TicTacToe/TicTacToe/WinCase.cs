@@ -7,9 +7,9 @@
 	{
 		private readonly List<Position> _positions = new List<Position>();
 
-		public WinCase(Position pos1, Position pos2, Position pos3)
+		public WinCase(params Position[] positions)
 		{
-			_positions.AddRange(new[] { pos1, pos2, pos3 });
+			_positions.AddRange(positions);
 		}
 
         public bool ContainsPlayerPositions(Player player)

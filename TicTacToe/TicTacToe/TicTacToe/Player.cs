@@ -5,7 +5,7 @@
 	public class Player
 	{
 		private readonly List<Position> _ownedPositions = new List<Position>();
-		private string _name;
+		private readonly string _name;
 
 		public Player(string name)
 		{
