@@ -6,8 +6,8 @@
 	{
 		public static void Main()
 		{
-			var game = new Game();
-			game.Run(Console.ReadLine, Console.WriteLine);
+			var game = new Game(Console.ReadLine, Console.WriteLine);
+			game.Run();
 		}
 	}
 }
